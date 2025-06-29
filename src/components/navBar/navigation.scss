@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.81rem 6.25rem 3.125rem 6.25rem;
+  .navbar__logo {
+    width: 210.32px;
+    height: 68px;
+  }
+  .navbar__link {
+    display: flex;
+    gap: 3.56rem;
+    &--active {
+      text-decoration: underline;
+    }
+  }
+}

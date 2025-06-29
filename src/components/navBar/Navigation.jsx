@@ -1,13 +1,25 @@
 import { NavLink } from "react-router-dom";
+import "./navigation.scss";
 
 function Navigation() {
   return (
     <div className="navbar">
-      <ul>
-        <NavLink to={"/"}>
+      <img
+        className="navbar__logo"
+        src="../public/LOGO.svg"
+        alt="Logo Kasa"
+      ></img>
+      <ul className="navbar__link">
+        <NavLink
+          to={"/"}
+          className={(nav) => (nav.isActive ? "navbar__link--active" : "")}
+        >
           <li>Accueil</li>
         </NavLink>
-        <NavLink to={"/about"}>
+        <NavLink
+          to={"/about"}
+          className={(nav) => (nav.isActive ? "navbar__link--active" : "")}
+        >
           <li>A propos</li>
         </NavLink>
       </ul>
