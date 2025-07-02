@@ -4,7 +4,7 @@ function About() {
   return (
     <>
       <Navigation></Navigation>
-      <h1>Page à propos</h1>;
+      <h1>Page à propos</h1>
     </>
   );
 }

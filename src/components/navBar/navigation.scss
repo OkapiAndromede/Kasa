@@ -2,14 +2,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2.81rem 6.25rem 3.125rem 6.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.687rem;
+  @media (min-width: 768px) {
+    margin-top: 2.81rem;
+    margin-bottom: 3.125rem;
+  }
   .navbar__logo {
-    width: 210.32px;
-    height: 68px;
+    width: 145px;
+    height: 46.88px;
+    @media (min-width: 768px) {
+      width: 210.32px;
+      height: 68px;
+    }
   }
   .navbar__link {
     display: flex;
-    gap: 3.56rem;
+    gap: 1.625rem;
+    @media (min-width: 768px) {
+      gap: 3.56rem;
+    }
     &--active {
       text-decoration: underline;
     }

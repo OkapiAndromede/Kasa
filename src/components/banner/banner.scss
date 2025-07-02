@@ -1,0 +1,44 @@
+.heroBanner {
+  border-radius: 25px;
+  background-image: url("../../assets/image_heroBanner.svg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 6.937rem;
+  margin-bottom: 1.375rem;
+  @media (min-width: 768px) {
+    height: 13.937rem;
+  }
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &__txt {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    @media (360px <= width <= 375px) {
+      width: calc(48% + 20vw);
+    }
+    @media (375px <= width <= 390px) {
+      width: calc(45% + 20vw);
+    }
+    @media (390px<= width <= 405px) {
+      width: calc(42% + 20vw);
+    }
+    @media (405px <= width <= 418px) {
+      width: calc(40% + 20vw);
+    }
+    @media (418px <= width <= 431px) {
+      width: calc(38% + 20vw);
+    }
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+}
