@@ -1,15 +1,15 @@
 @use "../../styles/mixin.scss";
 @use "../../styles/variables.scss";
 .apartmentContainer {
+  margin: 0 1.25rem;
   @media (min-width: 768px) {
     background-color: variables.$main-grey;
-    width: 100%;
     border-radius: 25px;
     padding: 56px 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 3.75rem;
-    margin-bottom: 3.125rem;
+    margin: 0 6.25rem 3.125rem 6.25rem;
   }
   .apartmentContainer__card {
     height: 340px;

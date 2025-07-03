@@ -1,0 +1,18 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.785rem;
+  background-color: black;
+  padding-top: 4.125rem;
+  padding-bottom: 1.812rem;
+  .footer__logo {
+    color: white;
+    width: 122px;
+    height: 39.44px;
+  }
+  .footer__txt {
+    color: #ffffff;
+  }
+}
