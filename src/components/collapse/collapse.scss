@@ -1,0 +1,32 @@
+@use "../../styles/variables.scss";
+.quality {
+  margin: 0 1.25rem 2.375rem 1.25rem;
+  flex: 1;
+  @media (min-width: 768px) {
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
+  }
+  .quality__item {
+    margin-bottom: 1.75rem;
+
+    &--header {
+      display: flex;
+      justify-content: space-between;
+      border-radius: 5px;
+      background-color: variables.$main-color;
+      color: white;
+    }
+    &--title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 0.625rem 0 0.5rem 0.937rem;
+    }
+    &--arrow {
+      padding: 0.687rem 1.25rem 0.562rem 0;
+    }
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
