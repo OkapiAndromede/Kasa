@@ -1,21 +1,50 @@
+import { useState } from "react";
 import "./collapse.scss";
 export default function Collapse() {
   return (
     <section className="quality">
-      <Wrapper title={"Fiabilité"}></Wrapper>
-      <Wrapper title={"Respect"}></Wrapper>
-      <Wrapper title={"Service"}></Wrapper>
-      <Wrapper title={"Sécurité"}></Wrapper>
+      <div className="container">
+        <Wrapper title={"Fiabilité"}>
+          Les annonces postés sur Kasa garantissent une fiabilité totale. Les
+          photos sont conformes aux logements, et <br></br> toutes les
+          informations sont régulièrement vérifiées par nos équipes.
+        </Wrapper>
+        <Wrapper title={"Respect"}>
+          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
+          comportement discriminiatoire ou de <br></br> perturbation du
+          voisinage entraînera une exclusion de notre plateforme.
+        </Wrapper>
+        <Wrapper title={"Service"}>
+          La qualité du service est au coeur de notre engagement chez Kasa. Nous
+          veillons à ce que chaque interaction,<br></br> que ce soit avec nos
+          hôtes ou nos locataires, soit empreinte de respect et de
+          bienveillance.
+        </Wrapper>
+        <Wrapper title={"Sécurité"}>
+          La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
+          pour les voyageurs, chaque logement<br></br> correspond aux critères
+          de sécurité établis par nos services. En laissant une note aussi bien
+          à l'hôte qu'au<br></br> locataire, cela permet à nos équipes de
+          vérifier que les standards sont bien respectés. Nous organisons
+          <br></br> également des ateliers sur la sécurité domestique pour nos
+          hôtes.
+        </Wrapper>
+      </div>
     </section>
   );
 }
 
-function Wrapper({ title }) {
+function Wrapper({ title, children }) {
+  const [isActive, setIsActive] = useState(false);
+  const toggleContent = (event) => {
+    event.stopPropagation();
+    setIsActive((value) => !value);
+  };
   return (
     <article className="quality__item">
       <div className="quality__item--header">
         <h3 className="quality__item--title">{title}</h3>
-        <div className="quality__item--arrow">
+        <div className="quality__item--arrow" onClick={toggleContent}>
           <svg
             width="25"
             height="14"
@@ -30,6 +59,17 @@ function Wrapper({ title }) {
           </svg>
         </div>
       </div>
+      {isActive ? (
+        <div className="quality__item--content">
+          <p>{children}</p>
+        </div>
+      ) : (
+        ""
+      )}
     </article>
   );
+}
+
+function handleClick(setIsActive) {
+  setIsActive((value) => !value);
 }
