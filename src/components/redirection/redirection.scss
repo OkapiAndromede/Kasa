@@ -1,0 +1,44 @@
+@use "../../styles/variables.scss";
+.redirection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__image {
+    width: 198px;
+    height: 99px;
+    margin-top: 11.18rem;
+    margin-bottom: 7.06rem;
+    @media (min-width: 768px) {
+      width: 597px;
+      height: 263px;
+      margin: 8.687rem 0;
+    }
+  }
+  &__txt {
+    font-size: 1.125rem;
+    text-align: center;
+    color: variables.$main-color;
+    margin-bottom: 7.06rem;
+    @media (min-width: 768px) {
+      font-size: 2.25rem;
+      margin-bottom: 8.687rem;
+    }
+
+    &--break {
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+  &__cta {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 7.06rem;
+    text-decoration: underline;
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+      margin-bottom: 8.687rem;
+    }
+  }
+}
