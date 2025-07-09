@@ -69,7 +69,3 @@ function Wrapper({ title, children }) {
     </article>
   );
 }
-
-function handleClick(setIsActive) {
-  setIsActive((value) => !value);
-}
