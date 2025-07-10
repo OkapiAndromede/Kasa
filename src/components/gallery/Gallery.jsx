@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./gallery.scss";
+import { NavLink } from "react-router-dom";
 
 function Gallery() {
   const [apartmentData, setApartmentData] = useState([]);
@@ -23,18 +24,24 @@ function Gallery() {
     <>
       <div className="apartmentContainer">
         {apartmentData.map((apartment) => (
-          <article key={apartment.id} className="apartmentContainer__card">
-            <div className="apartmentContainer__card--shadow">
-              <img
-                className="apartmentContainer__card--img"
-                src={apartment.cover}
-                alt={apartment.title}
-              ></img>
-              <h3 className="apartmentContainer__card--title">
-                {apartment.title}
-              </h3>
-            </div>
-          </article>
+          <NavLink
+            to={`/house/${apartment.id}`}
+            key={apartment.id}
+            className="apartmentContainer__card"
+          >
+            <article>
+              <div className="apartmentContainer__card--shadow">
+                <img
+                  className="apartmentContainer__card--img"
+                  src={apartment.cover}
+                  alt={apartment.title}
+                ></img>
+                <h3 className="apartmentContainer__card--title">
+                  {apartment.title}
+                </h3>
+              </div>
+            </article>
+          </NavLink>
         ))}
       </div>
     </>
