@@ -1,6 +1,17 @@
+@use "./variables.scss";
 /*****Cards*****/
 @mixin cards {
   height: 340px;
   width: 100%;
   border-radius: 10px;
+}
+/*****Petit blocs *****/
+@mixin tag_unit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  background-color: variables.$main-color;
+  padding: 0.135rem 1.74rem 0.115rem 1.625rem;
 }
