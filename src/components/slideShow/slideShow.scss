@@ -10,7 +10,7 @@
     object-fit: cover;
     border-radius: 25px;
     margin: 0 1.25rem 0.937rem 1.25rem;
-    width: 335px;
+    width: 100%;
     height: 255px;
     overflow: hidden;
     @media (min-width: 768px) {
@@ -64,6 +64,7 @@
 .descriptionContainer {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
+  margin-bottom: 1.25rem;
   @media (min-width: 768px) {
     margin-left: 6.25rem;
     margin-right: 6.25rem;
@@ -89,6 +90,7 @@
   }
   &__content--tags {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.625rem;
     .item {
       @include mixin.tag_unit;
@@ -115,10 +117,13 @@
     align-items: center;
     gap: 0.656rem;
     .owner__name {
+      width: 3.125rem;
+      text-align: right;
       font-size: 0.75rem;
       color: variables.$main-color;
       @media (min-width: 768px) {
         font-size: 1.125rem;
+        width: 4.5rem;
       }
     }
     .owner__picture {
@@ -135,6 +140,39 @@
   }
   &__info--rating svg:not(:last-child) {
     margin-right: 0.578rem;
+  }
+}
+.slideShow__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.25rem 1.687rem 1.25rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
+  }
+}
+//Surchage du style global
+.slideShow__wrapper--style {
+  width: 335px;
+  @media (min-width: 768px) {
+    width: 582px;
+  }
+  .quality__item--title {
+    font-size: 0.812rem;
+  }
+  .quality__item--content {
+    font-size: 0.76rem;
+  }
+  svg {
+    width: 16px;
+    height: 9.14px;
+  }
+  .active {
+    @media (min-width: 768px) {
+      height: 150px;
+    }
   }
 }
 .hidden {

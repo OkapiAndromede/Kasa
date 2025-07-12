@@ -5,43 +5,51 @@ export default function Collapse() {
     <section className="quality">
       <div className="container">
         <Wrapper title={"Fiabilité"}>
-          Les annonces postés sur Kasa garantissent une fiabilité totale. Les
-          photos sont conformes aux logements, et <br></br> toutes les
-          informations sont régulièrement vérifiées par nos équipes.
+          <p>
+            Les annonces postés sur Kasa garantissent une fiabilité totale. Les
+            photos sont conformes aux logements, et <br></br> toutes les
+            informations sont régulièrement vérifiées par nos équipes.
+          </p>
         </Wrapper>
         <Wrapper title={"Respect"}>
-          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-          comportement discriminiatoire ou de <br></br> perturbation du
-          voisinage entraînera une exclusion de notre plateforme.
+          <p>
+            La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
+            comportement discriminiatoire ou de <br></br> perturbation du
+            voisinage entraînera une exclusion de notre plateforme.
+          </p>
         </Wrapper>
         <Wrapper title={"Service"}>
-          La qualité du service est au coeur de notre engagement chez Kasa. Nous
-          veillons à ce que chaque interaction,<br></br> que ce soit avec nos
-          hôtes ou nos locataires, soit empreinte de respect et de
-          bienveillance.
+          <p>
+            La qualité du service est au coeur de notre engagement chez Kasa.
+            Nous veillons à ce que chaque interaction,<br></br> que ce soit avec
+            nos hôtes ou nos locataires, soit empreinte de respect et de
+            bienveillance.
+          </p>
         </Wrapper>
         <Wrapper title={"Sécurité"}>
-          La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
-          pour les voyageurs, chaque logement<br></br> correspond aux critères
-          de sécurité établis par nos services. En laissant une note aussi bien
-          à l'hôte qu'au<br></br> locataire, cela permet à nos équipes de
-          vérifier que les standards sont bien respectés. Nous organisons
-          <br></br> également des ateliers sur la sécurité domestique pour nos
-          hôtes.
+          <p>
+            La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
+            pour les voyageurs, chaque logement<br></br> correspond aux critères
+            de sécurité établis par nos services. En laissant une note aussi
+            bien à l'hôte qu'au<br></br> locataire, cela permet à nos équipes de
+            vérifier que les standards sont bien respectés. Nous organisons
+            <br></br> également des ateliers sur la sécurité domestique pour nos
+            hôtes.
+          </p>
         </Wrapper>
       </div>
     </section>
   );
 }
 
-function Wrapper({ title, children }) {
+export function Wrapper({ title, children, className = "" }) {
   const [isActive, setIsActive] = useState(false);
   const toggleContent = (event) => {
     event.stopPropagation();
     setIsActive((value) => !value);
   };
   return (
-    <article className="quality__item">
+    <article className={`quality__item ${className}`}>
       <div className="quality__item--header">
         <h3 className="quality__item--title">{title}</h3>
         <div className="quality__item--arrow" onClick={toggleContent}>
@@ -62,7 +70,7 @@ function Wrapper({ title, children }) {
       </div>
 
       <div className={`quality__item--content ${isActive ? "active" : ""}`}>
-        <p>{children}</p>
+        {children}
       </div>
     </article>
   );

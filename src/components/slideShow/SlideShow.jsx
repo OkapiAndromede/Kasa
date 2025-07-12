@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Wrapper } from "../collapse/Collapse";
 import "./slideShow.scss";
 function SlideShow() {
   const { id } = useParams();
@@ -18,7 +19,7 @@ function SlideShow() {
         //Recherche de l'apartement avec l'id où l'on a cliqué précedemment
         const foundApartement = data.find((apartement) => apartement.id === id);
         setApartmentData(foundApartement);
-      } catch {
+      } catch (error) {
         console.error("Erreur lors du chargement des données", error);
       }
     }
@@ -136,6 +137,16 @@ function SlideShow() {
             ))}
           </div>
         </div>
+      </article>
+      <article className="slideShow__wrapper">
+        <Wrapper title={"Description"} className="slideShow__wrapper--style">
+          <p>{apartmentData.description}</p>
+        </Wrapper>
+        <Wrapper title={"Équipements"} className="slideShow__wrapper--style">
+          {apartmentData.equipments.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </Wrapper>
       </article>
     </>
   );
