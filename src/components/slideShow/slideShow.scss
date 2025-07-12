@@ -1,7 +1,10 @@
+@use "../../styles/variables.scss";
+@use "../../styles/mixin.scss";
 .slideShowContainer {
   display: flex;
   justify-content: center;
   position: relative;
+  margin-bottom: 0.937rem;
 
   &__img {
     object-fit: cover;
@@ -57,4 +60,83 @@
       visibility: visible;
     }
   }
+}
+.descriptionContainer {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  @media (min-width: 768px) {
+    margin-left: 6.25rem;
+    margin-right: 6.25rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content--title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: variables.$main-color;
+    margin-bottom: 0.312rem;
+    @media (min-width: 768px) {
+      font-size: 2.25rem;
+    }
+  }
+  &__content--location {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.625rem;
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+  &__content--tags {
+    display: flex;
+    gap: 0.625rem;
+    .item {
+      @include mixin.tag_unit;
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: white;
+      @media (min-width: 768px) {
+        font-size: 0.875rem;
+      }
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    @media (min-width: 768px) {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+  &__info--owner {
+    display: flex;
+    align-items: center;
+    gap: 0.656rem;
+    .owner__name {
+      font-size: 0.75rem;
+      color: variables.$main-color;
+      @media (min-width: 768px) {
+        font-size: 1.125rem;
+      }
+    }
+    .owner__picture {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      @media (min-width: 768px) {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 1.31rem;
+      }
+    }
+  }
+  &__info--rating svg:not(:last-child) {
+    margin-right: 0.578rem;
+  }
+}
+.hidden {
+  display: none;
 }

@@ -56,7 +56,9 @@ function SlideShow() {
         />
         <svg
           onClick={sliderUpdtateRight}
-          className="slideShowContainer__arrow--right"
+          className={`slideShowContainer__arrow--right ${
+            nbrImage === 1 ? "hidden" : ""
+          }`}
           width="48"
           height="80"
           viewBox="0 0 48 80"
@@ -70,7 +72,9 @@ function SlideShow() {
         </svg>
         <svg
           onClick={sliderUpdtateLeft}
-          className="slideShowContainer__arrow--left"
+          className={`slideShowContainer__arrow--left ${
+            nbrImage === 1 ? "hidden" : ""
+          }`}
           width="48"
           height="80"
           viewBox="0 0 48 80"
@@ -82,7 +86,11 @@ function SlideShow() {
             fill="white"
           />
         </svg>
-        <p className="slideShowContainer__txt">{`${index + 1}/${nbrImage}`}</p>
+        <p
+          className={`slideShowContainer__txt ${
+            nbrImage === 1 ? "hidden" : ""
+          }`}
+        >{`${index + 1}/${nbrImage}`}</p>
       </div>
       <article className="descriptionContainer">
         <div className="descriptionContainer__content">
@@ -102,8 +110,9 @@ function SlideShow() {
         </div>
         <div className="descriptionContainer__info">
           <div className="descriptionContainer__info--owner">
-            <p>{apartmentData.host.name}</p>
+            <p className="owner__name">{apartmentData.host.name}</p>
             <img
+              className="owner__picture"
               src={apartmentData.host.picture}
               alt="Photo du propriétaire"
             ></img>
