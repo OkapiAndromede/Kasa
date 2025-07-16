@@ -9,7 +9,7 @@ function About() {
   return (
     <>
       <Navigation></Navigation>
-      <Banner text={""} backgroundImage={aboutImg}></Banner>
+      <Banner className={"about"} text={""} backgroundImage={aboutImg}></Banner>
       <Collapse></Collapse>
       <Footer></Footer>
     </>
