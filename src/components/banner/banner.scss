@@ -36,8 +36,12 @@
     @media (418px <= width <= 431px) {
       width: calc(38% + 20vw);
     }
+    // @media (min-width: 768px) {
+    //   font-size: 3rem;
+    // }
+    //Pour gérer les dimensions avec les tablettes
     @media (min-width: 768px) {
-      font-size: 3rem;
+      font-size: clamp(2rem, 0.857rem + 2.381vw, 3rem);
     }
   }
 }

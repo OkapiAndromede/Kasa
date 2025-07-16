@@ -20,7 +20,8 @@ footer {
     text-align: center;
     width: 120px;
     @media (min-width: 768px) {
-      font-size: 1.5rem;
+      // font-size: 1.5rem;
+      font-size: clamp(1rem, 0.112vw + 0.75rem, 1.5rem);
       width: fit-content;
     }
   }

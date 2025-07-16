@@ -20,7 +20,8 @@
     font-size: 0.75rem;
     @media (min-width: 768px) {
       gap: 3.56rem;
-      font-size: 1.5rem;
+      // font-size: 1.5rem;
+      font-size: clamp(0.75rem, 0.3rem + 1.786vw, 1.5rem);
     }
     &--active {
       text-decoration: underline;
