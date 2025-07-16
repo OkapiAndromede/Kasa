@@ -1,39 +1,21 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { Navigate, useParams } from "react-router-dom";
 import { Wrapper } from "../collapse/Collapse";
 import "./slideShow.scss";
+import useApartment from "../../hooks/useApartment";
 function SlideShow() {
+  //Utilisation d'un hook personalisé pour déporter la gestion du chargement/erreur
   const { id } = useParams();
-  const [apartmentData, setApartmentData] = useState(null);
-  const [apartementImg, setApartmentImg] = useState([]);
+  const { apartmentData, apartementImg, nbrImage, loading, notFound } =
+    useApartment(id);
   let [index, setIndex] = useState(0);
-  const [nbrImage, setNbrImage] = useState(0);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        // Récupération des données sous forme d'objet JS
-        const response = await fetch("/data/logements.json");
-        const data = await response.json();
+  //Bloque le rendu principal tant que les données ne sont pas prêtes
+  if (loading) return <p>Chargement...</p>;
+  //Renvoi l'utilisateur vers la page 404 si l'id ne match pas avec les data
+  if (notFound) return <Navigate to="/notFound" replace />;
 
-        //Recherche de l'apartement avec l'id où l'on a cliqué précedemment
-        const foundApartement = data.find((apartement) => apartement.id === id);
-        setApartmentData(foundApartement);
-      } catch (error) {
-        console.error("Erreur lors du chargement des données", error);
-      }
-    }
-    fetchData();
-  }, [id]);
-
-  useEffect(() => {
-    if (apartmentData) {
-      //Si apartmentData est truthy alors je stock les images ds apartmentImg
-      setApartmentImg(apartmentData.pictures);
-      setNbrImage(apartmentData.pictures.length);
-    }
-  }, [apartmentData]);
-
+  //Déclaration des fonctions gérant la logique du carrousel
   function sliderUpdtateLeft() {
     //lecture du state à partir de la valeur index en temps réel
     setIndex((prevIndex) => (prevIndex === 0 ? nbrImage - 1 : prevIndex - 1));
@@ -42,10 +24,6 @@ function SlideShow() {
     setIndex((prevIndex) =>
       prevIndex < nbrImage - 1 ? prevIndex + 1 : (prevIndex = 0)
     );
-  }
-  //Bloque le rendu principal tant que les données ne sont pas prêtes
-  if (!apartmentData) {
-    return <div>Chargement...</div>;
   }
   return (
     <>
