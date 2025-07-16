@@ -3,11 +3,10 @@
   background-position: center;
   background-size: cover;
   height: 6.937rem;
-  margin: 0 1.25rem 1.375rem 1.25rem;
+  margin: 0 1.25rem;
   @media (min-width: 768px) {
     height: 13.937rem;
-    margin-left: 6.25rem;
-    margin-right: 6.25rem;
+    margin: 0 6.25rem;
   }
   &__box {
     display: flex;
@@ -41,4 +40,8 @@
       font-size: 3rem;
     }
   }
+}
+//Surchage du style
+.about {
+  background-color: rgba(0, 0, 0, 0.3);
 }

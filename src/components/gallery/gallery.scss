@@ -1,7 +1,7 @@
 @use "../../styles/mixin.scss";
 @use "../../styles/variables.scss";
 .apartmentContainer {
-  margin: 0 1.25rem;
+  margin: 1.375rem 1.25rem 0 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -12,7 +12,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3.75rem;
-    margin: 0 6.25rem 3.125rem 6.25rem;
+    margin: 2.687rem 6.25rem 3.125rem 6.25rem;
   }
   .apartmentContainer__card {
     height: 340px;
