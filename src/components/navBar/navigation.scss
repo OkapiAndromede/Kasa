@@ -17,8 +17,10 @@
   .navbar__link {
     display: flex;
     gap: 1.625rem;
+    font-size: 0.75rem;
     @media (min-width: 768px) {
       gap: 3.56rem;
+      font-size: 1.5rem;
     }
     &--active {
       text-decoration: underline;

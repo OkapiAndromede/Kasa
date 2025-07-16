@@ -14,5 +14,12 @@ footer {
   }
   .footer__txt {
     color: #ffffff;
+    font-size: 0.75rem;
+    text-align: center;
+    width: 120px;
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+      width: fit-content;
+    }
   }
 }
