@@ -10,18 +10,23 @@ function Navigation() {
         alt="Logo Kasa"
       ></img>
       <ul className="navbar__link">
-        <NavLink
-          to={"/"}
-          className={(nav) => (nav.isActive ? "navbar__link--active" : "")}
-        >
-          <li>Accueil</li>
-        </NavLink>
-        <NavLink
-          to={"/about"}
-          className={(nav) => (nav.isActive ? "navbar__link--active" : "")}
-        >
-          <li>A propos</li>
-        </NavLink>
+        <li>
+          <NavLink
+            to={"/"}
+            className={(nav) => (nav.isActive ? "navbar__link--active" : "")}
+          >
+            Accueil
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to={"/about"}
+            className={(nav) => (nav.isActive ? "navbar__link--active" : "")}
+          >
+            A propos
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
