@@ -5,8 +5,10 @@ import Footer from "../../components/footer/Footer";
 function NotFound() {
   return (
     <>
-      <Navigation></Navigation>
-      <Redirection></Redirection>
+      <div className="notFound__container">
+        <Navigation></Navigation>
+        <Redirection></Redirection>
+      </div>
       <Footer></Footer>
     </>
   );
