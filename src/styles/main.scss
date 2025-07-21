@@ -12,9 +12,11 @@ body {
 #root {
   min-height: 100vh;
 }
-.house__container {
-  display: flex;
-  flex-direction: column;
+.house__container,
+.home__container,
+.about__container,
+.notFound__container {
+  margin: 0 auto;
   max-width: 1440px;
 }
 a {
