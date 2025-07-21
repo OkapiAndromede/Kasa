@@ -9,12 +9,14 @@ import heroBannerImg from "../../assets/image_heroBanner.svg";
 function Home() {
   return (
     <>
-      <Navigation></Navigation>
-      <Banner
-        text={"Chez vous, partout et ailleurs"}
-        backgroundImage={heroBannerImg}
-      ></Banner>
-      <Gallery></Gallery>
+      <div className="home__container">
+        <Navigation></Navigation>
+        <Banner
+          text={"Chez vous, partout et ailleurs"}
+          backgroundImage={heroBannerImg}
+        ></Banner>
+        <Gallery></Gallery>
+      </div>
       <Footer></Footer>
     </>
   );
