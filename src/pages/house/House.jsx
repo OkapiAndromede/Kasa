@@ -4,8 +4,10 @@ import Footer from "../../components/footer/Footer";
 function House() {
   return (
     <>
-      <Navigation></Navigation>
-      <SlideShow></SlideShow>
+      <div className="house__container">
+        <Navigation></Navigation>
+        <SlideShow></SlideShow>
+      </div>
       <Footer></Footer>
     </>
   );
