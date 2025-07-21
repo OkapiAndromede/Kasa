@@ -8,9 +8,15 @@ import Collapse from "../../components/collapse/Collapse";
 function About() {
   return (
     <>
-      <Navigation></Navigation>
-      <Banner className={"about"} text={""} backgroundImage={aboutImg}></Banner>
-      <Collapse></Collapse>
+      <div className="about__container">
+        <Navigation></Navigation>
+        <Banner
+          className={"about"}
+          text={""}
+          backgroundImage={aboutImg}
+        ></Banner>
+        <Collapse></Collapse>
+      </div>
       <Footer></Footer>
     </>
   );
