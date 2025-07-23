@@ -163,9 +163,15 @@
   }
   .quality__item--title {
     font-size: 0.812rem;
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+    }
   }
   .quality__item--content {
     font-size: 0.76rem;
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
   }
   svg {
     width: 16px;
@@ -173,7 +179,7 @@
   }
   .active {
     @media (min-width: 768px) {
-      height: 150px;
+      height: 200px;
     }
   }
 }
