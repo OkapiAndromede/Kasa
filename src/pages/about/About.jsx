@@ -10,12 +10,14 @@ function About() {
     <>
       <div className="about__container">
         <Navigation></Navigation>
-        <Banner
-          className={"about"}
-          text={""}
-          backgroundImage={aboutImg}
-        ></Banner>
-        <Collapse></Collapse>
+        <div className="main__content">
+          <Banner
+            className={"about"}
+            text={""}
+            backgroundImage={aboutImg}
+          ></Banner>
+          <Collapse></Collapse>
+        </div>
       </div>
       <Footer></Footer>
     </>
