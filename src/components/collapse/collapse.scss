@@ -1,6 +1,10 @@
 @use "../../styles/variables.scss";
 .quality {
   margin: 1.18rem 1.25rem 1.18rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @media (min-width: 768px) {
     margin: 2.375rem;
     margin-left: 6.25rem;
