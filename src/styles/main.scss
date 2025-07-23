@@ -17,6 +17,17 @@ body {
   max-width: 1440px;
   min-height: 100vh;
 }
+.house__container {
+  margin-bottom: 1.687rem;
+  @media (min-width: 768px) {
+    margin-bottom: 3.125rem;
+  }
+}
+.home__container {
+  @media (min-width: 768px) {
+    margin-bottom: 3.125rem;
+  }
+}
 .about__container {
   display: flex;
   flex-direction: column;
