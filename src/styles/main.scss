@@ -9,15 +9,23 @@ html,
 body {
   height: 100%;
 }
-#root {
-  min-height: 100vh;
-}
 .house__container,
 .home__container,
 .about__container,
 .notFound__container {
   margin: 0 auto;
   max-width: 1440px;
+  min-height: 100vh;
+}
+.about__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 a {
   color: inherit;
