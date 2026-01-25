@@ -1,14 +1,12 @@
 import { NavLink } from "react-router-dom";
 import "./navigation.scss";
 
+import logoKasa from "../../assets/LOGO.svg";
+
 function Navigation() {
   return (
     <div className="navbar">
-      <img
-        className="navbar__logo"
-        src="../public/LOGO.svg"
-        alt="Logo Kasa"
-      ></img>
+      <img className="navbar__logo" src={logoKasa} alt="Logo Kasa"></img>
       <ul className="navbar__link">
         <li>
           <NavLink
