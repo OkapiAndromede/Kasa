@@ -7,7 +7,7 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/Kasa/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/house/:id" element={<House />}></Route>
         <Route path="/notFound" element={<NotFound />}></Route>

@@ -10,7 +10,7 @@ function Navigation() {
       <ul className="navbar__link">
         <li>
           <NavLink
-            to={"/"}
+            to={"/Kasa/"}
             className={(nav) => (nav.isActive ? "navbar__link--active" : "")}
           >
             Accueil
