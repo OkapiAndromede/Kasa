@@ -9,7 +9,9 @@ function Gallery() {
     async function fetchData() {
       try {
         // Récupération des données sous forme d'objet JS
-        const response = await fetch("/data/logements.json");
+        const response = await fetch(
+          `${import.meta.env.BASE_URL}data/logements.json`,
+        );
         const data = await response.json();
 
         // Mise à jour de l'état de la variable apartmentData

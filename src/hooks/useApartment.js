@@ -10,7 +10,9 @@ export default function useApartment(id) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("/data/logements.json");
+        const response = await fetch(
+          `${import.meta.env.BASE_URL}data/logements.json`,
+        );
         const data = await response.json();
 
         const foundApartement = data.find((apartement) => apartement.id === id);
